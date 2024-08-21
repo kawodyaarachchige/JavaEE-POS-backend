@@ -1,1 +1,1 @@
-# JavaEE-POS-frontend
+# JavaEE-POS-backend

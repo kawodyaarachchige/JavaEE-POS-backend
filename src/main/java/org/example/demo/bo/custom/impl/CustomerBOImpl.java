@@ -1,15 +1,20 @@
 package org.example.demo.bo.custom.impl;
 
 import org.example.demo.bo.custom.CustomerBO;
+import org.example.demo.dao.DAOFactory;
+import org.example.demo.dao.custom.CustomerDAO;
 import org.example.demo.dto.CustomerDTO;
+import org.example.demo.entity.Customer;
+import org.example.demo.util.IdGenerator;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class CustomerBOImpl implements CustomerBO {
-
+ CustomerDAO customerDAO=(CustomerDAO) DAOFactory.getDaoFactory().getDao(DAOFactory.DaoFactoryTypes.CUSTOMER);
     @Override
-    public Boolean saveCustomer(CustomerDTO dto) {
-        return null;
+    public Boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
+        return customerDAO.save(new Customer(IdGenerator.generateId(),dto.getName(),dto.getAddress(),dto.getPhone()));
     }
 
     @Override

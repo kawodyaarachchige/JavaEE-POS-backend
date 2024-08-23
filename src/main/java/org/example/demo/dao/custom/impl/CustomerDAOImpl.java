@@ -1,5 +1,6 @@
 package org.example.demo.dao.custom.impl;
 
+import org.example.demo.dao.SQLUtil;
 import org.example.demo.dao.custom.CustomerDAO;
 import org.example.demo.entity.Customer;
 
@@ -14,7 +15,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean save(Customer customer) throws SQLException, ClassNotFoundException {
-        return false;
+        return SQLUtil.execute("INSERT INTO customer VALUES(?,?,?,?)",customer.getId(),customer.getName(),customer.getAddress(),customer.getPhone());
     }
 
     @Override

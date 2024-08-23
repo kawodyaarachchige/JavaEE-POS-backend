@@ -13,7 +13,7 @@ public class SQLUtil {
     static {
         try {
             var ctx=new InitialContext();
-            DataSource pool =(DataSource) ctx.lookup("java:comp/env/jdbc/aadJavaeePos");
+            DataSource pool =(DataSource) ctx.lookup("java:comp/env/jdbc/AADpos");
             connection = pool.getConnection();
         } catch (NamingException | SQLException e) {
             throw new RuntimeException(e);

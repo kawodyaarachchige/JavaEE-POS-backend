@@ -21,7 +21,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean update(Customer customer) throws SQLException {
-        return SQLUtil.execute("UPDATE customer SET name=?,address=?,phone=? WHERE id=?",customer.getName(),customer.getAddress(),customer.getPhone(),customer.getId());
+        return SQLUtil.execute("UPDATE customer SET name=?,address=?,phone=? WHERE customer_id=?",customer.getName(),customer.getAddress(),customer.getPhone(),customer.getId());
     }
 
     @Override

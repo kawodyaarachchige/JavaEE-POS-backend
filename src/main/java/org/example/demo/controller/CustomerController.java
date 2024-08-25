@@ -18,7 +18,7 @@ import java.io.Writer;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet(urlPatterns = "/customer", loadOnStartup = 1)
+@WebServlet(urlPatterns = "/customer/*", loadOnStartup = 1)
 public class CustomerController extends HttpServlet {
     CustomerBO customerBO = (CustomerBO) BOFactory.getBOFactory().getBO(BOFactory.BOFactoryTypes.CUSTOMER);
     static Logger logger = LoggerFactory.getLogger(CustomerController.class);
@@ -68,32 +68,29 @@ public class CustomerController extends HttpServlet {
     }
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse resp) {
-       try (Writer writer = resp.getWriter()) {
-           Jsonb jsonb = JsonbBuilder.create();
-           CustomerDTO customerDTO = jsonb.fromJson(req.getReader(), CustomerDTO.class);
-           String pathInfo = req.getPathInfo();
-           String searchId = "";
-           if(pathInfo == null || pathInfo.isEmpty()){
-               searchId = "";
-           }else {
-               pathInfo.substring(1);
-           }
+        try (Writer writer = resp.getWriter()) {
+            Jsonb jsonb = JsonbBuilder.create();
+            CustomerDTO customerDTO = jsonb.fromJson(req.getReader(), CustomerDTO.class);
+            String pathInfo = req.getPathInfo();
+            String searchId = (pathInfo==null||pathInfo.isEmpty())?"":pathInfo.substring(1);
 
-           Boolean isUpdated = customerBO.updateCustomer(searchId, customerDTO);
-           StandardResponse standardResponse;
-           if (isUpdated) {
-               logger.info("Customer updated");
-               resp.setStatus(200);
-               standardResponse = new StandardResponse(200, "Customer updated", customerDTO);
-           } else {
-               logger.info("Customer not updated");
-               resp.setStatus(404);
-               standardResponse = new StandardResponse(404, "Customer not updated", null);
-           }
-           jsonb.toJson(standardResponse, writer);
-       } catch (SQLException|IOException e) {
-           throw new RuntimeException(e);
-       }
+            Boolean isUpdated = customerBO.updateCustomer(searchId, customerDTO);
+            StandardResponse standardResponse;
 
+            if (isUpdated) {
+                resp.setStatus(200);
+                standardResponse = new StandardResponse(200, "Customer updated", customerDTO);
+            } else {
+                resp.setStatus(404);
+                standardResponse = new StandardResponse(404, "Customer not found", null);
+            }
+
+            jsonb.toJson(standardResponse, writer);
+        } catch (SQLException | IOException e) {
+            logger.error("Error while updating customer", e);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            throw new RuntimeException(e);
+        }
     }
+
 }

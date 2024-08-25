@@ -168,3 +168,56 @@ java.lang.NumberFormatException: For input string: "ad2c7b6-d2ca-47c9-932f-04a18
 16:37:10.825 [http-nio-8085-exec-8] INFO  o.e.d.controller.CustomerController -- Customer saved
 16:50:33.937 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
 17:01:35.217 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+17:37:19.192 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+17:40:04.741 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+17:40:56.948 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+17:43:22.261 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+17:49:15.273 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+17:52:00.558 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+18:02:02.547 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+18:03:17.310 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+18:03:21.507 [http-nio-8085-exec-2] ERROR o.e.d.controller.CustomerController -- Error while updating customer
+java.sql.SQLSyntaxErrorException: Unknown column 'id' in 'where clause'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.example.demo.dao.SQLUtil.execute(SQLUtil.java:33)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:24)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:11)
+	at org.example.demo.bo.custom.impl.CustomerBOImpl.updateCustomer(CustomerBOImpl.java:23)
+	at org.example.demo.controller.CustomerController.doPut(CustomerController.java:77)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.demo.filter.CORSFilter.doFilter(CORSFilter.java:26)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+18:04:20.854 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized

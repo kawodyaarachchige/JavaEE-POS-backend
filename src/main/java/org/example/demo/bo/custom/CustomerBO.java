@@ -9,8 +9,8 @@ import java.util.List;
 public interface CustomerBO  extends SuperBO {
 
     Boolean saveCustomer(CustomerDTO dto) throws SQLException,ClassNotFoundException;
-    Boolean updateCustomer(String id, CustomerDTO dto);
+    Boolean updateCustomer(String id, CustomerDTO dto) throws SQLException;
     Boolean deleteCustomer(String id);
     CustomerDTO searchCustomer(String id);
-    List<CustomerDTO> getAllCustomers();
+    List<CustomerDTO> getAllCustomers()throws SQLException;
 }

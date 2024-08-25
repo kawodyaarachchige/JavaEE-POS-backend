@@ -4,6 +4,7 @@ import org.example.demo.dao.SQLUtil;
 import org.example.demo.dao.custom.CustomerDAO;
 import org.example.demo.entity.Customer;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
@@ -20,7 +21,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean update(Customer customer) throws SQLException {
-        return false;
+        return SQLUtil.execute("UPDATE customer SET name=?,address=?,phone=? WHERE id=?",customer.getName(),customer.getAddress(),customer.getPhone(),customer.getId());
     }
 
     @Override
@@ -30,6 +31,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public ArrayList<Customer> getAll() throws SQLException {
-        return null;
+        ResultSet rst = SQLUtil.execute("SELECT * FROM customer");
+        ArrayList<Customer> customers = new ArrayList<>();
+        while (rst.next()){
+            customers.add(new Customer(rst.getString(1),rst.getString(2),rst.getString(3),rst.getInt(4)));
+        }
+        return customers;
+
+
+
     }
 }

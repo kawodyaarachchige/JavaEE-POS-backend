@@ -8,6 +8,7 @@ import org.example.demo.entity.Customer;
 import org.example.demo.util.IdGenerator;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CustomerBOImpl implements CustomerBO {
@@ -18,8 +19,8 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public Boolean updateCustomer(String id, CustomerDTO dto) {
-        return null;
+    public Boolean updateCustomer(String id, CustomerDTO dto) throws SQLException {
+        return customerDAO.update(new Customer(id,dto.getName(),dto.getAddress(),dto.getPhone()));
     }
 
     @Override
@@ -33,7 +34,10 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public List<CustomerDTO> getAllCustomers() {
-        return List.of();
+    public List<CustomerDTO> getAllCustomers() throws SQLException {
+        ArrayList<Customer> all = customerDAO.getAll();
+        List<CustomerDTO> list = all.stream().map(customer -> new CustomerDTO(customer.getId(), customer.getName(), customer.getAddress(), customer.getPhone())).toList();
+        return list;
+
     }
-}
+    }

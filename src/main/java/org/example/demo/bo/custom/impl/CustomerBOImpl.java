@@ -15,7 +15,7 @@ public class CustomerBOImpl implements CustomerBO {
  CustomerDAO customerDAO=(CustomerDAO) DAOFactory.getDaoFactory().getDao(DAOFactory.DaoFactoryTypes.CUSTOMER);
     @Override
     public Boolean saveCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-        return customerDAO.save(new Customer(IdGenerator.generateId(),dto.getName(),dto.getAddress(),dto.getPhone()));
+        return customerDAO.save(new Customer(IdGenerator.generateCustomerId(),dto.getName(),dto.getAddress(),dto.getPhone()));
     }
 
     @Override

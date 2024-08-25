@@ -27,7 +27,7 @@ public class ItemDAOImpl implements ItemDAO {
 
     @Override
     public boolean delete(String id) throws SQLException {
-        return false;
+        return SQLUtil.execute("DELETE FROM item WHERE item_id=?",id);
     }
 
     @Override

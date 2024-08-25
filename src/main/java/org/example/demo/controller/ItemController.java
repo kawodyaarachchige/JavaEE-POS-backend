@@ -96,5 +96,38 @@ public class ItemController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
+    @Override
+    public void doDelete(HttpServletRequest req, HttpServletResponse resp) {
+        String pathInfo = req.getPathInfo();
+        String searchId =(pathInfo==null||pathInfo.isEmpty())?"":pathInfo.substring(1);
+        Boolean isDeleted = null;
+
+        try {
+            isDeleted = itemBO.deleteItem(searchId);
+        } catch (SQLException e) {
+            logger.error("Error while deleting item", e);
+            resp.setStatus(404);
+            throw new RuntimeException(e);
+        }
+        StandardResponse standardResponse;
+        if (isDeleted) {
+            logger.info("Item deleted");
+            resp.setStatus(200);
+            standardResponse = new StandardResponse(200, "Item deleted", null);
+        } else {
+            logger.info("Item not deleted");
+            resp.setStatus(404);
+            standardResponse = new StandardResponse(404, "Item not deleted", null);
+        }
+        try (Writer writer = resp.getWriter()) {
+            Jsonb jsonb = JsonbBuilder.create();
+            jsonb.toJson(standardResponse, writer);
+        } catch (IOException e) {
+            logger.error("Error while deleting item", e);
+            resp.setStatus(404);
+            throw new RuntimeException(e);
+        }
+
+    }
 
 }

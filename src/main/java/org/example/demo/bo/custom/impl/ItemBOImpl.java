@@ -26,7 +26,7 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public Boolean deleteItem(String id) throws SQLException {
-        return null;
+        return itemDAO.delete(id);
     }
 
     @Override

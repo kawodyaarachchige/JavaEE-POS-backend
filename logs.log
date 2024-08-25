@@ -574,3 +574,19 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Tomatoo' for
 01:34:04.720 [http-nio-8085-exec-3] INFO  o.e.demo.controller.ItemController -- Item updated
 01:36:06.367 [http-nio-8085-exec-10] INFO  o.e.demo.controller.ItemController -- Item updated
 01:36:13.204 [http-nio-8085-exec-3] INFO  o.e.d.controller.CustomerController -- Customer deleted
+01:42:17.393 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+01:44:50.475 [http-nio-8085-exec-8] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:44:56.783 [http-nio-8085-exec-1] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:02.734 [http-nio-8085-exec-3] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:05.782 [http-nio-8085-exec-8] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:11.799 [http-nio-8085-exec-1] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:14.617 [http-nio-8085-exec-3] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:17.433 [http-nio-8085-exec-7] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:20.516 [http-nio-8085-exec-10] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:23.067 [http-nio-8085-exec-4] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:25.901 [http-nio-8085-exec-5] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:28.698 [http-nio-8085-exec-9] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:33.701 [http-nio-8085-exec-2] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:37.051 [http-nio-8085-exec-6] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:40.749 [http-nio-8085-exec-8] INFO  o.e.demo.controller.ItemController -- Item deleted
+01:45:51.917 [http-nio-8085-exec-1] INFO  o.e.demo.controller.ItemController -- Item saved

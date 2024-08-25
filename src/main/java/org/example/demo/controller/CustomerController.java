@@ -93,4 +93,35 @@ public class CustomerController extends HttpServlet {
         }
     }
 
+    @Override
+    public void doDelete(HttpServletRequest req, HttpServletResponse resp) {
+        String pathInfo = req.getPathInfo();
+        String searchId = (pathInfo==null||pathInfo.isEmpty())?"":pathInfo.substring(1);
+
+        Boolean isDeleted = null;
+        try {
+            isDeleted = customerBO.deleteCustomer(searchId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        StandardResponse standardResponse;
+        if (isDeleted) {
+            logger.info("Customer deleted");
+            resp.setStatus(200);
+            standardResponse = new StandardResponse(200, "Customer deleted", null);
+        } else {
+            logger.info("Customer not found");
+            resp.setStatus(404);
+            standardResponse = new StandardResponse(404, "Customer not found", null);
+        }
+        Jsonb jsonb = JsonbBuilder.create();
+        try (Writer writer = resp.getWriter()) {
+            jsonb.toJson(standardResponse, writer);
+        } catch (IOException e) {
+            logger.error("Error while deleting customer", e);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -221,3 +221,6 @@ java.sql.SQLSyntaxErrorException: Unknown column 'id' in 'where clause'
 	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
 	at java.base/java.lang.Thread.run(Thread.java:1583)
 18:04:20.854 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+18:16:04.647 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+18:16:17.359 [http-nio-8085-exec-3] INFO  o.e.d.controller.CustomerController -- Customer deleted
+18:22:30.593 [http-nio-8085-exec-7] INFO  o.e.d.controller.CustomerController -- Customer saved

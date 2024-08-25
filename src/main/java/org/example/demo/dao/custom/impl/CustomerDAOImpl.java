@@ -26,7 +26,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean delete(String id) throws SQLException {
-        return false;
+        return SQLUtil.execute("DELETE FROM customer WHERE customer_id=?",id);
     }
 
     @Override

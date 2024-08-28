@@ -47,7 +47,7 @@ The system is integrated with a MySQL database using Java for seamless data stor
 
 ### Frontend Repository
 
-The frontend code for the POS Management System is available in a separate repository. You can find it here https://github.com/kawodyaarachchige/JavaEE-POS-Frontend.git
+The frontend code for the POS Management System is available in a separate repository. You can find it [here](https://github.com/kawodyaarachchige/JavaEE-POS-Frontend.git)
 
 ### License
 🦇© 2024 All Right Reserved Created By Kawodya Arachchige

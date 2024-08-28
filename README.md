@@ -1,5 +1,5 @@
 
-# JavaEE POS 
+# JavaEE POS 🍎🍊🥭
 
 The POS Management System is a robust tool designed for handling Point of Sale tasks effectively. It facilitates essential operations like creating, reading, updating, and deleting records related to customers, items, and orders. Users can seamlessly manage sales processes through its user-friendly interface.
 
@@ -29,8 +29,7 @@ After installation, you gain the ability to:
 
 ### API Documentation
 
-For API documentation, including available endpoints and methods, refer to [Postman API Documentation]
-https://documenter.getpostman.com/view/36189302/2sAXjJ6t9Y
+For API documentation, including available endpoints and methods, refer to [Postman API Documentation](https://documenter.getpostman.com/view/36189302/2sAXjJ6t9Y)
 
 ### Logging
 The POS Management System utilizes the Simple Logging Facade for Java (SLF4J) for proper logging. Logs provide insights into system behavior and help troubleshoot issues.

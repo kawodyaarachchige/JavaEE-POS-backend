@@ -12,28 +12,7 @@ create table item(
                      price double(10,2),
                      quantity int
 
-)
-
-
-create database if not exists possystem;
-
-use possystem;
-
-create table customer(
-                         id          varchar(255) primary key,
-                         name        varchar(255) not null,
-                         address     varchar(255) not null,
-                         contact     varchar(255) not null
 );
-
-create table item(
-                     id              varchar(255) primary key,
-                     description     varchar(255) not null,
-                     unit_price      decimal(10,2) not null,
-                     qty             varchar(255) not null
-);
-
-use AADpos;
 create table orders(
                        id              varchar(255) primary key,
                        date            date not null,

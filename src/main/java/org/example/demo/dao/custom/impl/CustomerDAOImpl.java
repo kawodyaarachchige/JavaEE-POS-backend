@@ -21,12 +21,12 @@ public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
     public boolean save(Customer customer) throws SQLException, ClassNotFoundException {
-        return SQLUtil.execute("INSERT INTO customer VALUES(?,?,?,?)",customer.getId(),customer.getName(),customer.getAddress(),customer.getPhone());
+        return SQLUtil.execute("INSERT INTO customer VALUES(?,?,?,?)",customer.getCustomer_id(),customer.getName(),customer.getAddress(),customer.getPhone());
     }
 
     @Override
     public boolean update(Customer customer) throws SQLException {
-        return SQLUtil.execute("UPDATE customer SET name=?,address=?,phone=? WHERE customer_id=?",customer.getName(),customer.getAddress(),customer.getPhone(),customer.getId());
+        return SQLUtil.execute("UPDATE customer SET name=?,address=?,phone=? WHERE customer_id=?",customer.getName(),customer.getAddress(),customer.getPhone(),customer.getCustomer_id());
     }
 
     @Override

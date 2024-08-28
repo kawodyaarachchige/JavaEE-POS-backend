@@ -32,13 +32,13 @@ public class CustomerBOImpl implements CustomerBO {
     @Override
     public CustomerDTO searchCustomer(String id) throws SQLException {
         Customer customer = customerDAO.search(id).get(0);
-        return new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress(),customer.getPhone());
+        return new CustomerDTO(customer.getCustomer_id(),customer.getName(),customer.getAddress(),customer.getPhone());
     }
 
     @Override
     public List<CustomerDTO> getAllCustomers() throws SQLException {
         ArrayList<Customer> all = customerDAO.getAll();
-        List<CustomerDTO> list = all.stream().map(customer -> new CustomerDTO(customer.getId(), customer.getName(), customer.getAddress(), customer.getPhone())).toList();
+        List<CustomerDTO> list = all.stream().map(customer -> new CustomerDTO(customer.getCustomer_id(), customer.getName(), customer.getAddress(), customer.getPhone())).toList();
         return list;
 
     }

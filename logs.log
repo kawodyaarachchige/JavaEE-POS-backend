@@ -4948,3 +4948,264 @@ java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
 17:08:35.931 [http-nio-8085-exec-7] INFO  o.e.d.c.OrderDetailsController -- Inside order detail post method
 17:08:35.939 [http-nio-8085-exec-7] INFO  o.e.d.c.OrderDetailsController -- Order Details saved successfully
 17:08:52.799 [http-nio-8085-exec-3] INFO  o.e.demo.controller.ItemController -- Item found
+18:42:06.410 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+18:42:13.543 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:42:13.543 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:42:34.443 [http-nio-8085-exec-10] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:42:34.449 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:42:52.389 [http-nio-8085-exec-6] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:42:52.397 [http-nio-8085-exec-7] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:43:14.587 [http-nio-8085-exec-3] INFO  o.e.demo.controller.ItemController -- Item found
+18:43:30.313 [http-nio-8085-exec-6] INFO  o.e.demo.controller.ItemController -- Item found
+18:43:52.878 [http-nio-8085-exec-5] INFO  o.e.demo.controller.ItemController -- Item found
+18:44:08.670 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:44:08.670 [http-nio-8085-exec-10] INFO  o.e.demo.controller.OrderController -- Inside order get method
+18:44:18.489 [http-nio-8085-exec-10] INFO  o.e.demo.controller.ItemController -- Item found
+18:44:27.727 [http-nio-8085-exec-4] INFO  o.e.demo.controller.ItemController -- Item found
+18:44:52.209 [http-nio-8085-exec-2] INFO  o.e.demo.controller.ItemController -- Item found
+18:44:59.540 [http-nio-8085-exec-7] INFO  o.e.demo.controller.ItemController -- Item found
+18:45:20.459 [http-nio-8085-exec-6] INFO  o.e.demo.controller.ItemController -- Item found
+18:49:15.549 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order post method
+18:49:15.600 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Order saved successfully
+18:49:16.553 [http-nio-8085-exec-9] INFO  o.e.d.c.OrderDetailsController -- Inside order detail post method
+18:49:16.562 [http-nio-8085-exec-9] INFO  o.e.d.c.OrderDetailsController -- Order Details saved successfully
+19:04:26.047 [http-nio-8085-exec-5] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:04:26.053 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:04:27.120 [http-nio-8085-exec-8] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:04:27.121 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:06:27.878 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:06:27.878 [http-nio-8085-exec-8] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:07:56.051 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+19:14:02.222 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:14:02.224 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:18:28.335 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:18:28.332 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:20:26.122 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:20:26.124 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:21:45.923 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:21:45.925 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:24:26.920 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+19:24:31.570 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:24:31.570 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:09.174 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:18.778 [http-nio-8085-exec-10] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:20.973 [http-nio-8085-exec-9] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:22.137 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:23.669 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:24.920 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:25.770 [http-nio-8085-exec-6] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:26.304 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:50.041 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:26:50.041 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:30:31.004 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+19:30:39.627 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:30:39.627 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:35:13.573 [http-nio-8085-exec-1] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:35:13.575 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:35:40.948 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:35:45.807 [http-nio-8085-exec-9] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:36:00.163 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:36:38.572 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+19:36:43.276 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:36:58.283 [http-nio-8085-exec-9] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:37:46.739 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+19:37:52.515 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:39:09.058 [http-nio-8085-exec-5] INFO  o.e.demo.controller.OrderController -- Inside order get method
+19:39:09.061 [http-nio-8085-exec-7] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:00:48.474 [RMI TCP Connection(2)-127.0.0.1] INFO  o.e.d.controller.CustomerController -- Customer Controller initialized
+20:07:03.049 [http-nio-8085-exec-8] INFO  o.e.d.controller.CustomerController -- Customer saved
+20:09:41.762 [http-nio-8085-exec-10] ERROR o.e.d.controller.CustomerController -- Error while updating customer
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Kusal' for key 'customer.name'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.example.demo.dao.SQLUtil.execute(SQLUtil.java:33)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:29)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:11)
+	at org.example.demo.bo.custom.impl.CustomerBOImpl.updateCustomer(CustomerBOImpl.java:24)
+	at org.example.demo.controller.CustomerController.doPut(CustomerController.java:93)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.demo.filter.CORSFilter.doFilter(CORSFilter.java:35)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+20:11:21.503 [http-nio-8085-exec-3] ERROR o.e.d.controller.CustomerController -- Error while updating customer
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Kusal' for key 'customer.name'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.example.demo.dao.SQLUtil.execute(SQLUtil.java:33)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:29)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:11)
+	at org.example.demo.bo.custom.impl.CustomerBOImpl.updateCustomer(CustomerBOImpl.java:24)
+	at org.example.demo.controller.CustomerController.doPut(CustomerController.java:93)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.demo.filter.CORSFilter.doFilter(CORSFilter.java:35)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+20:13:00.533 [http-nio-8085-exec-6] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:13:00.533 [http-nio-8085-exec-7] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:13:02.488 [http-nio-8085-exec-10] ERROR o.e.d.controller.CustomerController -- Error while updating customer
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Kusal' for key 'customer.name'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.example.demo.dao.SQLUtil.execute(SQLUtil.java:33)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:29)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:11)
+	at org.example.demo.bo.custom.impl.CustomerBOImpl.updateCustomer(CustomerBOImpl.java:24)
+	at org.example.demo.controller.CustomerController.doPut(CustomerController.java:93)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.demo.filter.CORSFilter.doFilter(CORSFilter.java:35)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+20:13:28.465 [http-nio-8085-exec-7] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:13:28.465 [http-nio-8085-exec-9] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:13:47.864 [http-nio-8085-exec-6] ERROR o.e.d.controller.CustomerController -- Error while updating customer
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Kusal' for key 'customer.name'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.apache.tomcat.dbcp.dbcp2.DelegatingPreparedStatement.executeUpdate(DelegatingPreparedStatement.java:137)
+	at org.example.demo.dao.SQLUtil.execute(SQLUtil.java:33)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:29)
+	at org.example.demo.dao.custom.impl.CustomerDAOImpl.update(CustomerDAOImpl.java:11)
+	at org.example.demo.bo.custom.impl.CustomerBOImpl.updateCustomer(CustomerBOImpl.java:24)
+	at org.example.demo.controller.CustomerController.doPut(CustomerController.java:93)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.example.demo.filter.CORSFilter.doFilter(CORSFilter.java:35)
+	at jakarta.servlet.http.HttpFilter.doFilter(HttpFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:663)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:896)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+20:19:13.776 [http-nio-8085-exec-9] INFO  o.e.d.controller.CustomerController -- Customer deleted
+20:24:23.548 [http-nio-8085-exec-2] INFO  o.e.demo.controller.ItemController -- Item found
+20:27:40.713 [http-nio-8085-exec-7] INFO  o.e.demo.controller.ItemController -- Item saved
+20:29:54.840 [http-nio-8085-exec-8] INFO  o.e.demo.controller.ItemController -- Item found
+20:30:45.752 [http-nio-8085-exec-6] INFO  o.e.demo.controller.ItemController -- Item updated
+20:32:07.846 [http-nio-8085-exec-5] INFO  o.e.demo.controller.ItemController -- Item deleted
+20:34:58.324 [http-nio-8085-exec-9] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:38:53.540 [http-nio-8085-exec-4] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:41:02.600 [http-nio-8085-exec-2] INFO  o.e.demo.controller.OrderController -- Inside order get method
+20:46:07.615 [http-nio-8085-exec-3] INFO  o.e.demo.controller.OrderController -- Inside order post method
+20:46:07.674 [http-nio-8085-exec-3] ERROR o.e.demo.controller.OrderController -- Faild with: 
+20:47:52.515 [http-nio-8085-exec-8] INFO  o.e.demo.controller.OrderController -- Inside order post method
+20:47:52.528 [http-nio-8085-exec-8] INFO  o.e.demo.controller.OrderController -- Order saved successfully
+20:51:43.420 [http-nio-8085-exec-6] INFO  o.e.d.c.OrderDetailsController -- Inside order detail GET method
+20:57:04.510 [http-nio-8085-exec-2] INFO  o.e.d.c.OrderDetailsController -- Inside order detail POST method

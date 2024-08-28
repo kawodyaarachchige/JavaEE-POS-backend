@@ -21,7 +21,7 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet(urlPatterns = "/orderDetails")
+@WebServlet(urlPatterns = "/orderDetails/*")
 public class OrderDetailsController extends HttpServlet {
     JsonbConfig config = new JsonbConfig().withFormatting(true);
     Jsonb jsonb = JsonbBuilder.create(config);
@@ -36,31 +36,46 @@ public class OrderDetailsController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-        logger.info("Inside order detail get method");
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        logger.info("Inside order detail GET method");
 
         String id = req.getParameter("id");
-
-        if (id != null) {
+        try (var writer = resp.getWriter()) {
+            if (id != null) {
+                var orderDetails = orderDetailsBO.searchByOrderId(id);
+                if (orderDetails != null) {
+                    resp.setContentType("application/json");
+                    resp.setStatus(HttpServletResponse.SC_OK);
+                    writer.write(jsonb.toJson(orderDetails));
+                } else {
+                    resp.setStatus(HttpServletResponse.SC_NOT_FOUND);
+                    StandardResponse standardResponse = new StandardResponse(404, "Order not found", null);
+                    writer.write(jsonb.toJson(standardResponse));
+                }
+            } else {
+                resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
+                StandardResponse standardResponse = new StandardResponse(400, "Order ID is required", null);
+                writer.write(jsonb.toJson(standardResponse));
+            }
+        } catch (JsonException | SQLException | ClassNotFoundException e) {
+            logger.error("Failed with: ", e);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            StandardResponse standardResponse = new StandardResponse(500, "An error occurred", null);
             try (var writer = resp.getWriter()) {
-                writer.write(jsonb.toJson(orderDetailsBO.searchByOrderId(id)));
-            } catch (JsonException | SQLException | ClassNotFoundException e) {
-                logger.error("Faild with: ",e.getMessage());
-                throw new RuntimeException(e);
+                writer.write(jsonb.toJson(standardResponse));
             }
         }
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         if (!req.getContentType().toLowerCase().startsWith("application/json") || req.getContentType() == null) {
             resp.sendError(HttpServletResponse.SC_UNSUPPORTED_MEDIA_TYPE);
+            return;
         }
 
-        try (var writer = resp.getWriter()){
-
-            logger.info("Inside order detail post method");
+        try (var writer = resp.getWriter()) {
+            logger.info("Inside order detail POST method");
 
             OrderDetailDTO orderDetailDTO = jsonb.fromJson(req.getReader(), OrderDetailDTO.class);
             boolean isSave = orderDetailsBO.save(orderDetailDTO);
@@ -68,20 +83,22 @@ public class OrderDetailsController extends HttpServlet {
 
             StandardResponse standardResponse;
             if (isSave && isUpdate) {
-                writer.write("Order Details saved successfully");
-                logger.info("Order Details saved successfully");
                 resp.setStatus(HttpServletResponse.SC_CREATED);
-                standardResponse = new StandardResponse(200,"Order Details saved successfully", null);
+                standardResponse = new StandardResponse(201, "Order Details saved successfully", null);
             } else {
-                writer.write("Order Details not saved");
-                logger.error("Order Details not saved");
                 resp.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-                standardResponse = new StandardResponse(400,"Order Details not saved", null);
+                standardResponse = new StandardResponse(400, "Order Details not saved", null);
             }
-            jsonb.toJson(standardResponse, writer);
+            resp.setContentType("application/json");
+            writer.write(jsonb.toJson(standardResponse));
         } catch (JsonException | SQLException | ClassNotFoundException e) {
-            logger.error("Faild with: ",e.getMessage());
-            throw new RuntimeException(e);
+            logger.error("Failed with: ", e);
+            resp.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
+            StandardResponse standardResponse = new StandardResponse(500, "An error occurred", null);
+            try (var writer = resp.getWriter()) {
+                writer.write(jsonb.toJson(standardResponse));
+            }
         }
     }
+
 }

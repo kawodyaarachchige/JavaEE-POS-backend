@@ -2,7 +2,7 @@
 <h1 align="center">
     <img src="https://readme-typing-svg.herokuapp.com/?font=Righteous&size=35&center=true&vCenter=true&width=500&height=70&duration=4000&lines=Java+EE+POS+Backend+🍎🍊🍓&color=FF6600" />
 </h1>
-The POS Management System is a robust tool designed for handling Point of Sale tasks effectively. It facilitates essential operations like creating, reading, updating, and deleting records related to customers, items, and orders. Users can seamlessly manage sales processes through its user-friendly interface.
+The POS Management System is a robust tool designed for handling Point of Sale tasks effectively. It facilitates essential operations like creating, reading,searching,updating, and deleting records related to customers, items, and orders. Users can seamlessly manage sales processes through its user-friendly interface.
 
 ## Table Of Content
 
@@ -26,7 +26,7 @@ Follow these steps to install and set up the POS Management System:
 
 After installation, you gain the ability to:
 
-- Manage customer details, items, and orders efficiently with features for creating, reading, updating, and deleting records.
+- Manage customer details, items, and orders efficiently with features for creating, reading,searching,updating, and deleting records.
 
 ### API Documentation
 

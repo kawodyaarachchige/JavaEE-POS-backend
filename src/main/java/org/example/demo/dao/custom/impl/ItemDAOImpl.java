@@ -11,7 +11,12 @@ import java.util.ArrayList;
 public class ItemDAOImpl implements ItemDAO {
     @Override
     public ArrayList<Item> search(String id) throws SQLException {
-        return null;
+        ResultSet rst = SQLUtil.execute("SELECT * FROM item WHERE item_id=?",id);
+        ArrayList<Item> items = new ArrayList<>();
+        while (rst.next()){
+            items.add(new Item(rst.getString(1),rst.getString(2),rst.getDouble(3),rst.getInt(4)));
+        }
+        return items;
     }
 
     @Override

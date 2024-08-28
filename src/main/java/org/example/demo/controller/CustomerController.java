@@ -58,11 +58,11 @@ public class CustomerController extends HttpServlet {
             String pathInfo = req.getPathInfo();
             String searchedId = (pathInfo == null || pathInfo.isEmpty()) ? null : pathInfo.substring(1);
             StandardResponse standardResponse;
-            System.out.println("Searched : "+searchedId);
             if (searchedId!=null){
                 CustomerDTO searchedCustomers = customerBO.searchCustomer(searchedId);
                 Jsonb jsonb = JsonbBuilder.create();
                 if(searchedCustomers!=null){
+                    System.out.println(searchedCustomers.getName());
                     response.setStatus(200);
                     standardResponse = new StandardResponse(200,"Customer found successfully",searchedCustomers);
                 }else{
@@ -81,38 +81,6 @@ public class CustomerController extends HttpServlet {
             logger.error("Error while Getting Customer / Customers : ", e);
             throw new RuntimeException(e);
         }
-        /*try(Writer writer = resp.getWriter()){
-            String pathInfo = req.getPathInfo();
-            String searchId = (pathInfo == null || pathInfo.isEmpty()) ? null : pathInfo.substring(1);
-            System.out.println("Searched Customer : "+searchId);
-            if (searchId != null) {
-                try {
-                    Jsonb jsonb = JsonbBuilder.create();
-                    CustomerDTO customerDTO = customerBO.searchCustomer(searchId);
-                    resp.setStatus(200);
-                    StandardResponse standardResponse;
-                    standardResponse = new StandardResponse(200, "Customer Fetched", customerDTO);
-                    jsonb.toJson(standardResponse, writer);
-                } catch (Exception e) {
-                    logger.error("Error while getting customer 2", e);
-                    e.printStackTrace();
-                }
-            }else if(searchId == null){
-                try {
-                    Jsonb jsonb = JsonbBuilder.create();
-                    List<CustomerDTO> allCustomers = customerBO.getAllCustomers();
-                    resp.setStatus(200);
-                    StandardResponse standardResponse;
-                    standardResponse = new StandardResponse(200, "Customer saved", allCustomers);
-                    jsonb.toJson(standardResponse, writer);
-                } catch (Exception e) {
-                    logger.error("Error while getting customer 3", e);
-                    e.printStackTrace();
-                }
-            }
-        }catch (Exception e){
-            logger.error("Error while getting customer 1", e);
-        }*/
     }
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse resp) {

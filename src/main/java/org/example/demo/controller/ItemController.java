@@ -59,12 +59,30 @@ public class ItemController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp) {
         try (Writer writer = resp.getWriter()) {
-            Jsonb jsonb = JsonbBuilder.create();
-            List<ItemDTO> allItems = itemBO.getAllItems();
-            resp.setStatus(200);
+            String pathInfo = req.getPathInfo();
+            String searchedId = (pathInfo == null || pathInfo.isEmpty()) ? null : pathInfo.substring(1);
             StandardResponse standardResponse;
-            standardResponse = new StandardResponse(200, "All Items", allItems);
-            jsonb.toJson(standardResponse, writer);
+            System.out.println("Searched Item Id : "+searchedId);
+            if(searchedId!=null){
+                ItemDTO searchedItems = itemBO.searchItem(searchedId);
+                Jsonb jsonb = JsonbBuilder.create();
+                if(searchedItems!=null){
+                    logger.info("Item found");
+                    resp.setStatus(200);
+                    standardResponse = new StandardResponse(200, "Item found", searchedItems);
+                }else{
+                    logger.info("Item not found");
+                    resp.setStatus(404);
+                    standardResponse = new StandardResponse(404, "Item not found", null);
+                }
+                jsonb.toJson(standardResponse, writer);
+            }else{
+                List<ItemDTO> allItems = itemBO.getAllItems();
+                Jsonb jsonb = JsonbBuilder.create();
+                resp.setStatus(200);
+                standardResponse = new StandardResponse(200, "All Items", allItems);
+                jsonb.toJson(standardResponse, writer);
+            }
         } catch (Exception e) {
             logger.error("Error while getting all items", e);
             throw new RuntimeException(e);

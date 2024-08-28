@@ -39,7 +39,10 @@ public class ItemBOImpl implements ItemBO {
 
     @Override
     public ItemDTO searchItem(String id) throws SQLException {
-        return null;
+        ArrayList<Item> search = itemDAO.search(id);
+        Item item = search.get(0);
+        System.out.println("item = " + item.getDescription());
+        return new ItemDTO(item.getItem_id(), item.getDescription(), item.getPrice(), item.getQuantity());
     }
 
     @Override

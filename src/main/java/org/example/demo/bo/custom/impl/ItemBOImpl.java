@@ -41,4 +41,9 @@ public class ItemBOImpl implements ItemBO {
     public ItemDTO searchItem(String id) throws SQLException {
         return null;
     }
+
+    @Override
+    public boolean updateQty(String id, String qty) throws SQLException, ClassNotFoundException {
+        return itemDAO.updateQty(id, qty);
+    }
 }

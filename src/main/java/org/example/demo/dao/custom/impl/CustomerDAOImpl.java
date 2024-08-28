@@ -11,7 +11,12 @@ import java.util.ArrayList;
 public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public ArrayList<Customer> search(String id) throws SQLException {
-        return null;
+        ResultSet rst = SQLUtil.execute("SELECT * FROM customer WHERE customer_id=?",id);
+        ArrayList<Customer> customers = new ArrayList<>();
+        while (rst.next()){
+            customers.add(new Customer(rst.getString(1),rst.getString(2),rst.getString(3),rst.getInt(4)));
+        }
+        return customers;
     }
 
     @Override
@@ -38,7 +43,6 @@ public class CustomerDAOImpl implements CustomerDAO {
         }
         return customers;
 
-
-
     }
+
 }

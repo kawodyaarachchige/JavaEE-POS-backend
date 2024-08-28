@@ -2,6 +2,7 @@ package org.example.demo.bo.custom.impl;
 
 import org.example.demo.bo.custom.CustomerBO;
 import org.example.demo.dao.DAOFactory;
+import org.example.demo.dao.SQLUtil;
 import org.example.demo.dao.custom.CustomerDAO;
 import org.example.demo.dto.CustomerDTO;
 import org.example.demo.entity.Customer;
@@ -29,8 +30,9 @@ public class CustomerBOImpl implements CustomerBO {
     }
 
     @Override
-    public CustomerDTO searchCustomer(String id) {
-        return null;
+    public CustomerDTO searchCustomer(String id) throws SQLException {
+        Customer customer = customerDAO.search(id).get(0);
+        return new CustomerDTO(customer.getId(),customer.getName(),customer.getAddress(),customer.getPhone());
     }
 
     @Override

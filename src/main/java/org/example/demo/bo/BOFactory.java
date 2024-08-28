@@ -2,6 +2,8 @@ package org.example.demo.bo;
 
 import org.example.demo.bo.custom.impl.CustomerBOImpl;
 import org.example.demo.bo.custom.impl.ItemBOImpl;
+import org.example.demo.bo.custom.impl.OrderBOImpl;
+import org.example.demo.bo.custom.impl.OrderDetailsBOImpl;
 
 public class BOFactory {
 
@@ -17,7 +19,9 @@ public class BOFactory {
 
     public enum BOFactoryTypes{
         CUSTOMER,
-        ITEM
+        ITEM,
+        ORDER,
+        ORDER_DETAILS
     }
 
     public SuperBO getBO(BOFactoryTypes boFactoryTypes){
@@ -26,6 +30,10 @@ public class BOFactory {
                 return new CustomerBOImpl();
             case ITEM:
                 return new ItemBOImpl();
+            case ORDER:
+                return new OrderBOImpl();
+            case ORDER_DETAILS:
+                return new OrderDetailsBOImpl();
             default:
                 return null;
         }

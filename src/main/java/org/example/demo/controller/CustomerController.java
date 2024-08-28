@@ -52,19 +52,67 @@ public class CustomerController extends HttpServlet {
             throw new RuntimeException(e);
         }
     }
-
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp) {
-        try (Writer writer = resp.getWriter()) {
-            Jsonb jsonb = JsonbBuilder.create();
-            List<CustomerDTO> allCustomers = customerBO.getAllCustomers();
-            resp.setStatus(200);
+    public void doGet(HttpServletRequest req, HttpServletResponse response) {
+        try(Writer writer=response.getWriter()){
+            String pathInfo = req.getPathInfo();
+            String searchedId = (pathInfo == null || pathInfo.isEmpty()) ? null : pathInfo.substring(1);
             StandardResponse standardResponse;
-            standardResponse = new StandardResponse(200, "Customer saved", allCustomers);
-            jsonb.toJson(standardResponse, writer);
-        } catch (Exception e) {
-            e.printStackTrace();
+            System.out.println("Searched : "+searchedId);
+            if (searchedId!=null){
+                CustomerDTO searchedCustomers = customerBO.searchCustomer(searchedId);
+                Jsonb jsonb = JsonbBuilder.create();
+                if(searchedCustomers!=null){
+                    response.setStatus(200);
+                    standardResponse = new StandardResponse(200,"Customer found successfully",searchedCustomers);
+                }else{
+                    response.setStatus(404);
+                    standardResponse = new StandardResponse(404,"Customer not found",null);
+                }
+                jsonb.toJson(standardResponse,writer);
+            }else{
+                List<CustomerDTO> allCustomers = customerBO.getAllCustomers();
+                Jsonb jsonb = JsonbBuilder.create();
+                response.setStatus(200);
+                standardResponse = new StandardResponse(200,"Customers found successfully",allCustomers);
+                jsonb.toJson(standardResponse,writer);
+            }
+        }catch (Exception e) {
+            logger.error("Error while Getting Customer / Customers : ", e);
+            throw new RuntimeException(e);
         }
+        /*try(Writer writer = resp.getWriter()){
+            String pathInfo = req.getPathInfo();
+            String searchId = (pathInfo == null || pathInfo.isEmpty()) ? null : pathInfo.substring(1);
+            System.out.println("Searched Customer : "+searchId);
+            if (searchId != null) {
+                try {
+                    Jsonb jsonb = JsonbBuilder.create();
+                    CustomerDTO customerDTO = customerBO.searchCustomer(searchId);
+                    resp.setStatus(200);
+                    StandardResponse standardResponse;
+                    standardResponse = new StandardResponse(200, "Customer Fetched", customerDTO);
+                    jsonb.toJson(standardResponse, writer);
+                } catch (Exception e) {
+                    logger.error("Error while getting customer 2", e);
+                    e.printStackTrace();
+                }
+            }else if(searchId == null){
+                try {
+                    Jsonb jsonb = JsonbBuilder.create();
+                    List<CustomerDTO> allCustomers = customerBO.getAllCustomers();
+                    resp.setStatus(200);
+                    StandardResponse standardResponse;
+                    standardResponse = new StandardResponse(200, "Customer saved", allCustomers);
+                    jsonb.toJson(standardResponse, writer);
+                } catch (Exception e) {
+                    logger.error("Error while getting customer 3", e);
+                    e.printStackTrace();
+                }
+            }
+        }catch (Exception e){
+            logger.error("Error while getting customer 1", e);
+        }*/
     }
     @Override
     public void doPut(HttpServletRequest req, HttpServletResponse resp) {

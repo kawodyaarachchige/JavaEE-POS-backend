@@ -39,4 +39,9 @@ public class ItemDAOImpl implements ItemDAO {
         }
         return items;
     }
+
+    @Override
+    public boolean updateQty(String id, String qty) throws SQLException, ClassNotFoundException {
+        return SQLUtil.execute("UPDATE item SET quantity=? WHERE item_id=?",qty,id);
+    }
 }

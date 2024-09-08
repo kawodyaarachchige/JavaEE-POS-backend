@@ -3,6 +3,7 @@ package org.example.demo.dao.custom.impl;
 import org.example.demo.dao.SQLUtil;
 import org.example.demo.dao.custom.OrderDAO;
 import org.example.demo.entity.Order;
+import org.example.demo.util.IdGenerator;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -11,9 +12,7 @@ import java.util.ArrayList;
 public class OrderDAOImpl implements OrderDAO {
     @Override
     public String nextId() throws SQLException {
-        ResultSet rst = SQLUtil.execute("SELECT id FROM orders ORDER BY id DESC LIMIT 1;");
-
-        return rst.next() ? String.format("OID-%03d", (Integer.parseInt(rst.getString("id").replace("OID-", "")) + 1)) : "OID-001";
+    return IdGenerator.generateOrderId();
     }
 
     @Override

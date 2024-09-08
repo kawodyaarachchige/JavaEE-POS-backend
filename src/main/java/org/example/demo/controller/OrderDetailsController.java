@@ -12,14 +12,19 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.example.demo.bo.BOFactory;
 import org.example.demo.bo.custom.ItemBO;
+import org.example.demo.bo.custom.OrderBO;
 import org.example.demo.bo.custom.OrderDetailsBO;
+import org.example.demo.dto.OrderDTO;
 import org.example.demo.dto.OrderDetailDTO;
 import org.example.demo.util.StandardResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.Writer;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 @WebServlet(urlPatterns = "/orderDetails/*")
 public class OrderDetailsController extends HttpServlet {
@@ -27,6 +32,7 @@ public class OrderDetailsController extends HttpServlet {
     Jsonb jsonb = JsonbBuilder.create(config);
     static Logger logger = LoggerFactory.getLogger(OrderDetailsController.class);
     OrderDetailsBO orderDetailsBO = (OrderDetailsBO) BOFactory.getBOFactory().getBO(BOFactory.BOFactoryTypes.ORDER_DETAILS);
+    OrderBO orderBO = (OrderBO) BOFactory.getBOFactory().getBO(BOFactory.BOFactoryTypes.ORDER);
     ItemBO itemBO = (ItemBO) BOFactory.getBOFactory().getBO(BOFactory.BOFactoryTypes.ITEM);
 
     @Override
@@ -39,6 +45,30 @@ public class OrderDetailsController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("Inside order detail GET method");
 
+        /*try (Writer writer = resp.getWriter()) {
+            String pathInfo = req.getPathInfo();
+            String searchedId = (pathInfo == null || pathInfo.isEmpty()) ? null : pathInfo.substring(1);
+            StandardResponse standardResponse;
+            System.out.println("Searched Item Id 1.1 : "+searchedId);
+            Jsonb jsonb = JsonbBuilder.create();
+            if(searchedId!=null){
+                ArrayList<OrderDetailDTO> orderDetailDTOS = orderDetailsBO.searchByOrderId(searchedId);
+                System.out.println(orderDetailDTOS);
+                standardResponse = new StandardResponse(200, "Order Details Found", orderDetailDTOS);
+            }else{
+                List<OrderDTO> allOrders = orderBO.getAllOrders();
+                if(allOrders == null){
+                    standardResponse = new StandardResponse(404 , "No Orders Found", null);
+                }else{
+                    System.out.println(allOrders);
+                    standardResponse = new StandardResponse(200, "All Orders Found", allOrders);
+                }
+               *//* standardResponse = new StandardResponse(200, "All Orders Found", allOrders);*//*
+            }
+            jsonb.toJson(standardResponse, writer);
+        }catch (Exception e){
+            logger.error("Failed with: ", e);
+        }*/
         String id = req.getParameter("id");
         try (var writer = resp.getWriter()) {
             if (id != null) {

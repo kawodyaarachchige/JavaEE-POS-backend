@@ -54,4 +54,27 @@ public class IdGenerator {
         }
         return id;
     }
+    public static String generateOrderId() throws SQLException {
+        ResultSet rst = SQLUtil.execute("SELECT id FROM orders ORDER BY id DESC");
+        String id = null;
+        while (rst.next()) {
+            String potentialId = rst.getString(1);
+            if (potentialId.startsWith("O")) {
+                try {
+                    Integer.parseInt(potentialId.substring(3));
+                    id = potentialId;
+                    break;
+                } catch (NumberFormatException ignored) {
+                }
+            }
+        }
+
+        if (id == null) {
+            id = "O001";
+        } else {
+            int idNum = Integer.parseInt(id.substring(3)) + 1;
+            id = "O" + String.format("%03d", idNum);
+        }
+        return id;
+        }
 }
